@@ -1,0 +1,16 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Project{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Project</h1>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
