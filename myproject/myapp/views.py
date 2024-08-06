@@ -1,27 +1,26 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Author, Book, Review
-from .forms import AuthorForm, BookForm, ReviewForm, SearchForm
+from django.shortcuts import render
+from .models import MartialArtsStudent
+from .forms import MartialArtsStudentForm, SearchForm
 
 def index(request):
     return render(request, 'myapp/index.html')
 
-def add_author(request):
+def add_student(request):
     if request.method == "POST":
-        form = AuthorForm(request.POST)
+        form = MartialArtsStudentForm(request.POST)
         if form.is_valid():
             form.save()
     else:
-        form = AuthorForm()
-    return render(request, 'myapp/add_author.html', {'form': form})
+        form = MartialArtsStudentForm()
+    return render(request, 'myapp/add_student.html', {'form': form})
 
 def search(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['query']
-            results = Book.objects.filter(title__icontains=query)
+            results = MartialArtsStudent.objects.filter(name__icontains=query)
             return render(request, 'myapp/search_results.html', {'results': results})
     else:
         form = SearchForm()
     return render(request, 'myapp/search.html', {'form': form})
-

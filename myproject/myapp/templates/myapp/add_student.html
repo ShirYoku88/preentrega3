@@ -1,10 +1,9 @@
-<!-- add_author.html -->
 {% extends "myapp/base.html" %}
 
-{% block title %}Add Author{% endblock %}
+{% block title %}Add Kendo Student{% endblock %}
 
 {% block content %}
-<h2>Add a new author</h2>
+<h2>Add Kendo Student</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

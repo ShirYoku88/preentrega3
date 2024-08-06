@@ -1,10 +1,9 @@
-<!-- search.html -->
 {% extends "myapp/base.html" %}
 
-{% block title %}Search{% endblock %}
+{% block title %}Search Students{% endblock %}
 
 {% block content %}
-<h2>Search for a book</h2>
+<h2>Search Students</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
