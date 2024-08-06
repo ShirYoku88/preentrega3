@@ -5,38 +5,9 @@
 {% block content %}
 <h2>Search Results</h2>
 {% if results %}
-    <h3>Judo Students</h3>
     <ul>
-    {% for student in results.judo_students %}
-        <li>{{ student.name }} ({{ student.belt_color }} belt)</li>
-    {% endfor %}
-    </ul>
-
-    <h3>Karate Students</h3>
-    <ul>
-    {% for student in results.karate_students %}
-        <li>{{ student.name }} ({{ student.belt_color }} belt)</li>
-    {% endfor %}
-    </ul>
-
-    <h3>Aikido Students</h3>
-    <ul>
-    {% for student in results.aikido_students %}
-        <li>{{ student.name }} ({{ student.belt_color }} belt)</li>
-    {% endfor %}
-    </ul>
-
-    <h3>Kendo Students</h3>
-    <ul>
-    {% for student in results.kendo_students %}
-        <li>{{ student.name }} ({{ student.belt_color }} belt)</li>
-    {% endfor %}
-    </ul>
-
-    <h3>Jujitsu Students</h3>
-    <ul>
-    {% for student in results.jujitsu_students %}
-        <li>{{ student.name }} ({{ student.belt_color }} belt)</li>
+    {% for student in results %}
+        <li>{{ student.name }} ({{ student.belt_color }} belt, {{ student.discipline }})</li>
     {% endfor %}
     </ul>
 {% else %}

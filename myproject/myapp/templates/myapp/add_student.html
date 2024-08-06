@@ -1,9 +1,9 @@
 {% extends "myapp/base.html" %}
 
-{% block title %}Add Kendo Student{% endblock %}
+{% block title %}Add Student{% endblock %}
 
 {% block content %}
-<h2>Add Kendo Student</h2>
+<h2>Add Martial Arts Student</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
